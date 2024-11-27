@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maquinas_virtuales>
+    <maquina id="1">
+        <nombre>Ubuntu-Server</nombre>
+        <cpu nucleos="4" />
+        <ram cantidad="8192" unidad="MB" />
+        <disco ruta="/home/usuario/VirtualBox VMs/Ubuntu-Server/Ubuntu-Server.vdi" tipo="vdi" tamano="50" unidad="GB" />
+        <adaptador_red modo="NAT">
+            <reenvio_puertos>
+                <puerto_entrada>8080</puerto_entrada>
+                <puerto_salida>80</puerto_salida>
+            </reenvio_puertos>
+        </adaptador_red>
+    </maquina>
+
+    <maquina id="2">
+        <nombre>Windows10</nombre>
+        <cpu nucleos="2" />
+        <ram cantidad="4096" unidad="MB" />
+        <disco ruta="/home/usuario/VirtualBox VMs/Windows10/Windows10.vmdk" tipo="vmdk" tamano="100" unidad="GB" />
+        <adaptador_red modo="adaptador puente"/>
+    </maquina>
+
+    <maquina id="3">
+        <nombre>CentOS-Stream</nombre>
+        <cpu nucleos="8" />
+        <ram cantidad="16384" unidad="MB" />
+        <disco ruta="/home/usuario/VirtualBox VMs/CentOS-Stream/CentOS-Stream.vdi" tipo="vdi" tamano="150" unidad="GB" />
+        <adaptador_red modo="NAT">
+            <reenvio_puertos>
+                <puerto_entrada>2222</puerto_entrada>
+                <puerto_salida>22</puerto_salida>
+            </reenvio_puertos>
+        </adaptador_red>
+    </maquina>
+</maquinas_virtuales>

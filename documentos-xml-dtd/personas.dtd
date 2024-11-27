@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Definición de la estructura para el archivo personas.xml -->
+<!ELEMENT personas (persona+)>
+<!-- La lista de personas debe contener uno o más elementos persona, por eso usamos el wildcard "+" -->
+
+<!ELEMENT persona (nombre, apellidos, telefono, email, direccion)>
+<!-- Cada persona debe tener los elementos: nombre, apellidos, telefono, email y direccion -->
+
+<!ATTLIST persona id ID #REQUIRED>
+<!-- El atributo 'id' es obligatorio para identificar a cada persona de manera única -->
+
+<!ELEMENT nombre (#PCDATA)>
+<!-- El nombre es un texto simple (PCDATA) -->
+
+<!ELEMENT apellidos (#PCDATA)>
+<!-- Los apellidos son un texto simple (PCDATA) -->
+
+<!ELEMENT telefono (#PCDATA)>
+<!-- El teléfono es un texto simple (PCDATA) -->
+
+<!ELEMENT email (#PCDATA)>
+<!-- El email es un texto simple (PCDATA) -->
+
+<!ELEMENT direccion (tipo_via, nombre_via, numero)>
+<!-- La dirección debe contener los elementos: tipo_via, nombre_via y numero -->
+
+<!ELEMENT tipo_via (#PCDATA)>
+<!-- El tipo de vía es un texto simple (PCDATA) -->
+
+<!ELEMENT nombre_via (#PCDATA)>
+<!-- El nombre de la vía es un texto simple (PCDATA) -->
+
+<!ELEMENT numero (#PCDATA)>
+<!-- El número de la dirección es un texto simple (PCDATA) -->

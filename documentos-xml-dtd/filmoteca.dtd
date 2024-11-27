@@ -1,0 +1,27 @@
+<!ELEMENT filmoteca (pelicula+)>
+
+<!-- El elemento filmoteca debe contener uno o más elementos pelicula -->
+
+<!ELEMENT pelicula (titulo, director, año, duracion, genero)>
+<!-- Cada elemento pelicula contiene los elementos titulo, director, año, duracion y genero en ese orden -->
+
+<!ELEMENT titulo (#PCDATA)>
+<!-- El título es un texto de caracteres (PCDATA) -->
+
+<!ELEMENT director (#PCDATA)>
+<!-- El director es un texto de caracteres (PCDATA) -->
+
+<!ELEMENT año (#PCDATA)>
+<!-- El año de lanzamiento es un texto de caracteres (PCDATA) -->
+
+<!ELEMENT duracion (#PCDATA)>
+<!-- La duración es un texto de caracteres (PCDATA). El atributo "unidad" es obligatorio y su valor es minutos -->
+
+<!ELEMENT genero (#PCDATA)>
+<!-- El género es un texto de caracteres (PCDATA) -->
+
+<!ATTLIST pelicula calificacion (G | PG | PG-13 | R) #REQUIRED>
+<!-- El atributo "calificacion" es obligatorio y puede ser uno de los valores G, PG, PG-13 o R. -->
+
+<!ATTLIST duracion unidad (minutos) #REQUIRED>
+<!-- El atributo "unidad" del elemento duracion es obligatorio y su valor es siempre "minutos" -->

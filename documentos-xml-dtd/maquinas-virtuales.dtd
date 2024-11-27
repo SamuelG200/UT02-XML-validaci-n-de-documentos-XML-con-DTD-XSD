@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Definición de la estructura para el archivo maquinas-virtuales.xml -->
+<!ELEMENT maquinas-virtuales (maquina+)>
+<!-- La lista de máquinas virtuales debe contener al menos una máquina, por eso usamos el wildcard "+" -->
+
+<!ELEMENT maquina (nombre, cpu, ram, disco, adaptador-red)>
+<!-- Cada máquina virtual debe tener los elementos: nombre, cpu, ram, disco y adaptador-red -->
+
+<!ATTLIST maquina id ID #REQUIRED>
+<!-- El atributo 'id' es obligatorio para identificar de forma única cada máquina virtual -->
+
+<!ELEMENT nombre (#PCDATA)>
+<!-- El nombre de la máquina es un texto simple (PCDATA) -->
+
+<!ELEMENT cpu (#PCDATA)>
+<!-- La cantidad de núcleos de la CPU es un texto simple (PCDATA) -->
+
+<!ELEMENT ram (#PCDATA)>
+<!-- La cantidad de RAM es un texto simple (PCDATA) -->
+
+<!ELEMENT disco (ruta, tipo)>
+<!-- El disco de la máquina tiene los elementos: ruta (ubicación del archivo) y tipo (vdi o vmdk) -->
+
+<!ELEMENT ruta (#PCDATA)>
+<!-- La ruta del archivo del disco es un texto simple (PCDATA) -->
+
+<!ELEMENT tipo (#PCDATA)>
+<!-- El tipo de disco (vdi o vmdk) es un texto simple (PCDATA) -->
+
+<!ELEMENT tamaño-disco (#PCDATA)>
+<!-- El tamaño del disco es un texto simple (PCDATA) -->
+
+<!ATTLIST disco unidad CDATA #REQUIRED>
+<!-- El atributo 'unidad' es obligatorio y debe especificar la unidad de almacenamiento (GB) -->
+
+<!ELEMENT adaptador-red (modo, reglas-reenvio?)>
+<!-- El adaptador de red tiene los elementos: modo (NAT o puente) y reglas de reenvío opcionales -->
+
+<!ELEMENT modo (#PCDATA)>
+<!-- El modo del adaptador de red (NAT o puente) es un texto simple (PCDATA) -->
+
+<!ELEMENT reglas-reenvio (puerto+)>
+<!-- Las reglas de reenvío pueden contener uno o más puertos, por eso usamos el wildcard "+" -->
+
+<!ELEMENT puerto (#PCDATA)>
+<!-- Cada puerto es un texto simple (PCDATA) -->
+
+<!ATTLIST adaptador-red tipo CDATA #IMPLIED>
+<!-- El atributo 'tipo' es opcional (IMPLIED) ya que no todos los adaptadores de red requieren un tipo especificado -->

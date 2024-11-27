@@ -1,0 +1,22 @@
+<!ELEMENT libreria (libro+)>
+
+<!-- El elemento libreria contiene uno o más elementos libro -->
+
+<!ELEMENT libro (titulo, autor, año, precio)>
+
+<!-- Cada elemento libro debe contener los elementos titulo, autor, año y precio en ese orden -->
+
+<!ELEMENT titulo (#PCDATA)>
+<!-- El título es un texto de caracteres (PCDATA) -->
+
+<!ELEMENT autor (#PCDATA)>
+<!-- El autor es un texto de caracteres (PCDATA) -->
+
+<!ELEMENT año (#PCDATA)>
+<!-- El año de publicación es un texto de caracteres (PCDATA) -->
+
+<!ELEMENT precio (#PCDATA)>
+<!-- El precio es un texto de caracteres (PCDATA) -->
+
+<!ATTLIST precio moneda (USD | EUR) #REQUIRED>
+<!-- El atributo 'moneda' es obligatorio y debe ser uno de los valores 'USD' o 'EUR' -->

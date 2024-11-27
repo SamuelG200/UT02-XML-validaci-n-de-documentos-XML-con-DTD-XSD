@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Definición de la estructura para el archivo facturas.xml -->
+<!ELEMENT facturas (factura+)>
+<!-- La lista de facturas debe contener al menos una factura, por eso usamos el wildcard "+" -->
+
+<!ELEMENT factura (datos-emisor, datos-receptor, concepto+, total)>
+<!-- Cada factura debe tener los elementos: datos-emisor, datos-receptor, concepto y total. El concepto puede repetirse, por eso usamos "+" -->
+
+<!ATTLIST factura id ID #REQUIRED>
+<!-- El atributo 'id' es obligatorio para identificar de manera única cada factura -->
+
+<!ELEMENT datos-emisor (nombre, direccion, telefono, email)>
+<!-- Los datos del emisor son obligatorios e incluyen nombre, dirección, teléfono y correo electrónico -->
+
+<!ELEMENT nombre (#PCDATA)>
+<!-- El nombre del emisor es un texto simple (PCDATA) -->
+
+<!ELEMENT direccion (#PCDATA)>
+<!-- La dirección del emisor es un texto simple (PCDATA) -->
+
+<!ELEMENT telefono (#PCDATA)>
+<!-- El teléfono del emisor es un texto simple (PCDATA) -->
+
+<!ELEMENT email (#PCDATA)>
+<!-- El email del emisor es un texto simple (PCDATA) -->
+
+<!ELEMENT datos-receptor (nombre, direccion, telefono, email)>
+<!-- Los datos del receptor tienen los mismos elementos que el emisor, todos son obligatorios -->
+
+<!ELEMENT concepto (descripcion, cantidad, precio, total-por-concepto)>
+<!-- Un concepto debe tener la descripción, cantidad, precio y el total por concepto -->
+
+<!ELEMENT descripcion (#PCDATA)>
+<!-- La descripción del concepto es un texto simple (PCDATA) -->
+
+<!ELEMENT cantidad (#PCDATA)>
+<!-- La cantidad del concepto es un texto simple (PCDATA) -->
+
+<!ELEMENT precio (#PCDATA)>
+<!-- El precio del concepto es un texto simple (PCDATA) -->
+
+<!ELEMENT total-por-concepto (#PCDATA)>
+<!-- El total por concepto es un texto simple (PCDATA) -->
+
+<!ELEMENT total (#PCDATA)>
+<!-- El total de la factura es un texto simple (PCDATA) -->
